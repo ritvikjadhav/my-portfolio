@@ -1,152 +1,433 @@
 
 "use client";
 
-import {
-  ArrowUpRight,
-    Download,
-      Sparkles,
-        Users,
-          Trophy,
-            Globe,
-              Menu,
-              } from "lucide-react";
+const projects = [
+  {
+    number: "01",
+    name: "VelType",
+    subtitle: "Online Typing Platform",
+    description:
+      "An interactive typing platform with structured lessons and WPM tests to improve typing speed and accuracy.",
+    tags: "HTML · CSS · JAVASCRIPT",
+    link: "https://veltype.vercel.app",
+    type: "finance",
+  },
+  {
+    number: "02",
+    name: "Bizvero",
+    subtitle: "Digital Business Platform",
+    description:
+      "Helping small businesses grow digitally through online product catalogues, digital storefronts and optional buying features.",
+    tags: "HTML · CSS · JAVASCRIPT · SUPABASE",
+    link: "https://bizvero.vercel.app",
+    type: "brand",
+  },
+  {
+    number: "03",
+    name: "Coming Soon",
+    subtitle: "The Next Creation",
+    description:
+      "Exploring new ideas, learning modern technologies and building more useful digital experiences.",
+    tags: "MORE PROJECTS IN PROGRESS",
+    link: "#contact",
+    type: "mobile",
+  },
+];
 
-              const stats = [
-                { icon: Sparkles, number: "02+", label: "PROJECTS BUILT" },
-                  { icon: Users, number: "01", label: "DEVELOPER PORTFOLIO" },
-                    { icon: Trophy, number: "100%", label: "PASSION FOR CODING" },
-                      { icon: Globe, number: "∞", label: "ALWAYS LEARNING" },
-                      ];
+const capabilities = [
+  {
+    icon: "◇",
+    title: "FRONTEND DEVELOPMENT",
+    description: "Building responsive and interactive interfaces using modern web technologies.",
+  },
+  {
+    icon: "▣",
+    title: "WEB DEVELOPMENT",
+    description: "Creating clean, functional and user-friendly websites for the web.",
+  },
+  {
+    icon: "✧",
+    title: "UI IMPLEMENTATION",
+    description: "Turning design concepts into attractive and consistent web experiences.",
+  },
+  {
+    icon: "⌘",
+    title: "BACKEND INTEGRATION",
+    description: "Connecting applications with databases and backend services.",
+  },
+  {
+    icon: "▱",
+    title: "RESPONSIVE DESIGN",
+    description: "Making websites work smoothly across mobile, tablet and desktop.",
+  },
+  {
+    icon: "⬡",
+    title: "PROBLEM SOLVING",
+    description: "Writing organised code and solving practical development challenges.",
+  },
+];
 
-                      export default function Home() {
-                        return (
-                            <main className="min-h-screen bg-[#171a20] text-[#f2f2f2] overflow-hidden">
+const technologies = [
+  ["5", "HTML5"],
+  ["3", "CSS3"],
+  ["JS", "JavaScript"],
+  ["S", "Supabase"],
+  ["G", "Git & GitHub"],
+  ["N", "Next.js"],
+];
 
-                                  {/* NAVBAR */}
-                                        <header className="max-w-[1400px] mx-auto px-6 md:px-12 py-6 flex items-center justify-between">
-                                                <a href="#" className="font-serif text-3xl tracking-tight">
-                                                          YN
-                                                                  </a>
+const process = [
+  {
+    number: "01",
+    title: "IDEA",
+    description: "Understanding the purpose and planning the project.",
+    icon: "⌕",
+  },
+  {
+    number: "02",
+    title: "PLAN",
+    description: "Structuring the layout, features and user experience.",
+    icon: "◎",
+  },
+  {
+    number: "03",
+    title: "DEVELOP",
+    description: "Writing clean code and building the website.",
+    icon: "⌘",
+  },
+  {
+    number: "04",
+    title: "TEST",
+    description: "Checking responsiveness, functionality and performance.",
+    icon: "</>",
+  },
+  {
+    number: "05",
+    title: "DEPLOY",
+    description: "Launching the project and making it available online.",
+    icon: "↗",
+  },
+];
 
-                                                                          <nav className="hidden md:flex items-center gap-9 text-[11px] tracking-widest text-gray-400">
-                                                                                    <a href="#work" className="hover:text-white transition">WORK</a>
-                                                                                              <a href="#capabilities" className="hover:text-white transition">CAPABILITIES</a>
-                                                                                                        <a href="#about" className="hover:text-white transition">ABOUT</a>
-                                                                                                                  <a href="#contact" className="hover:text-white transition">CONTACT</a>
-                                                                                                                            <a
-                                                                                                                                        href="#contact"
-                                                                                                                                                    className="bg-white text-black rounded-full px-7 py-3 font-medium hover:bg-gray-300 transition"
-                                                                                                                                                              >
-                                                                                                                                                                          LET&apos;S TALK ↗
-                                                                                                                                                                                    </a>
-                                                                                                                                                                                            </nav>
+export default function Home() {
+  return (
+    <main className="portfolio" id="top">
 
-                                                                                                                                                                                                    <a href="#contact" className="md:hidden">
-                                                                                                                                                                                                              <Menu size={25} />
-                                                                                                                                                                                                                      </a>
-                                                                                                                                                                                                                            </header>
+      {/* NAVIGATION */}
+      <header className="navbar">
+        <a href="#top" className="logo">RS</a>
 
-                                                                                                                                                                                                                                  {/* HERO SECTION */}
-                                                                                                                                                                                                                                        <section className="max-w-[1400px] mx-auto px-6 md:px-12 pt-12 md:pt-10">
-                                                                                                                                                                                                                                                <div className="relative min-h-[490px] md:min-h-[570px] flex items-center">
+        <nav className="nav-links">
+          <a href="#work">WORK</a>
+          <a href="#capabilities">CAPABILITIES</a>
+          <a href="#about">ABOUT</a>
+          <a href="#contact">CONTACT</a>
+          <a href="#contact" className="talk-button">
+            LET'S TALK ↗
+          </a>
+        </nav>
 
-                                                                                                                                                                                                                                                          {/* HERO TEXT */}
-                                                                                                                                                                                                                                                                    <div className="relative z-10 w-full md:w-[65%]">
-                                                                                                                                                                                                                                                                                <p className="text-[10px] md:text-xs tracking-[0.25em] text-gray-400 mb-5">
-                                                                                                                                                                                                                                                                                              BUILDING DIGITAL EXPERIENCES THAT MATTER
-                                                                                                                                                                                                                                                                                                          </p>
+        <a href="#work" className="mobile-menu" aria-label="View projects">
+          ☰
+        </a>
+      </header>
 
-                                                                                                                                                                                                                                                                                                                      <h1 className="font-black uppercase tracking-[-0.065em] leading-[0.79] text-[clamp(4rem,11vw,10rem)]">
-                                                                                                                                                                                                                                                                                                                                    WEB
-                                                                                                                                                                                                                                                                                                                                                  <br />
-                                                                                                                                                                                                                                                                                                                                                                DEVELOPER
-                                                                                                                                                                                                                                                                                                                                                                            </h1>
+      {/* HERO SECTION */}
+      <section className="hero" id="about">
 
-                                                                                                                                                                                                                                                                                                                                                                                        <p className="max-w-[390px] text-gray-400 text-sm leading-6 mt-7">
-                                                                                                                                                                                                                                                                                                                                                                                                      I build modern, responsive and user-friendly websites
-                                                                                                                                                                                                                                                                                                                                                                                                                    that combine creative design, clean code and technology.
-                                                                                                                                                                                                                                                                                                                                                                                                                                </p>
+        <div className="hero-copy">
+          <p className="eyebrow">
+            BUILDING DIGITAL EXPERIENCES THAT MATTER
+          </p>
 
-                                                                                                                                                                                                                                                                                                                                                                                                                                            <div className="flex flex-wrap items-center gap-5 mt-7">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                          <a
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                          href="#work"
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          className="bg-white text-black px-6 py-3 text-[10px] tracking-wider font-semibold hover:bg-gray-300 transition"
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        >
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        VIEW MY WORK <ArrowUpRight className="inline ml-2" size={14} />
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      </a>
+          <h1 className="hero-title">
+            WEB
+            <br />
+            DEVELOPER
+          </h1>
 
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <a
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    href="/resume.pdf"
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    download
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    className="text-gray-300 text-[10px] tracking-wider hover:text-white"
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  >
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  DOWNLOAD RESUME <Download className="inline ml-2" size={13} />
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                </a>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            </div>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      </div>
+          <p className="hero-description">
+            I build modern, responsive and user-friendly websites
+            that combine creative design, clean code and technology.
+          </p>
 
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                {/* PORTRAIT PLACEHOLDER */}
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          <div className="absolute right-0 bottom-0 h-[90%] w-[48%] hidden md:block">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      <div className="absolute right-[5%] top-[8%] w-[85%] aspect-square rounded-full border border-white/15" />
+          <div className="hero-actions">
+            <a href="#work" className="light-button">
+              VIEW MY WORK ↗
+            </a>
 
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  <div
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                className="absolute inset-0 bg-gradient-to-t from-[#171a20] via-transparent to-transparent"
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            />
+            <a href="#contact" className="download-link">
+              LET'S CONNECT ↗
+            </a>
+          </div>
+        </div>
 
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <div className="absolute inset-0 flex items-center justify-center text-center">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      <div className="h-[85%] w-[72%] rounded-t-[48%] bg-gradient-to-br from-[#555b65] via-[#343a44] to-[#171a20] flex items-center justify-center">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      <span className="font-serif text-7xl text-white/20">YN</span>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    </div>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                </div>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          </div>
+        <div className="portrait-area">
+          <div className="portrait-ring"></div>
 
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    {/* AVAILABILITY */}
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              <div className="absolute right-0 bottom-8 hidden md:block text-right z-20">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          <Sparkles className="ml-auto mb-8" size={22} />
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      <p className="text-[9px] tracking-widest text-gray-500">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    AVAILABLE FOR
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                </p>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <h3 className="text-xl font-bold">WEB PROJECTS</h3>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <p className="text-[9px] tracking-widest text-gray-500 mt-1">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      LET&apos;S CONNECT ↗
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  </p>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            </div>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    </div>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          </section>
+          <div className="portrait-placeholder">
+            <span>RS</span>
+          </div>
 
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                {/* STATISTICS */}
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      <section className="max-w-[1320px] mx-auto px-5 md:px-12">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              <div className="grid grid-cols-2 md:grid-cols-4 bg-[#242830] border border-white/10 rounded-xl py-7 md:py-8">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        {stats.map((stat, index) => {
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    const Icon = stat.icon;
+          <div className="portrait-star">✦</div>
 
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                return (
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              <div
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              key={stat.label}
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              className={`flex flex-col items-center justify-center gap-3 py-4 ${
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                index !== 0 ? "border-l border-white/10" : ""
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                }`}
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              >
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              <Icon size={22} className="text-gray-300" />
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              <h2 className="text-3xl md:text-5xl font-light tracking-tight">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                {stat.number}
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                </h2>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <p className="text-[8px] md:text-[10px] tracking-widest text-gray-500 text-center">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  {stat.label}
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  </p>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                </div>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            );
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      })}
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              </div>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    </section>
+          <div className="availability">
+            <span>FOCUSED ON</span>
+            <strong>BUILDING</strong>
+            <span>DIGITAL EXPERIENCES ↗</span>
+          </div>
+        </div>
+      </section>
 
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          {/* NEXT SECTIONS WILL BE ADDED HERE */}
+      {/* STATISTICS */}
+      <section className="stats">
 
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <footer className="max-w-[1320px] mx-auto px-6 md:px-12 py-8 mt-10 border-t border-white/10 flex justify-between text-[10px] text-gray-500">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <p>© 2026 YOUR NAME. ALL RIGHTS RESERVED.</p>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <a href="#top" className="hover:text-white">BACK TO TOP ↑</a>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      </footer>
+        <div className="stat">
+          <span>✧</span>
+          <strong>02+</strong>
+          <span>PROJECTS BUILT</span>
+        </div>
 
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          </main>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            );
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            }
+        <div className="stat">
+          <span>◎</span>
+          <strong>02</strong>
+          <span>LIVE DEPLOYMENTS</span>
+        </div>
+
+        <div className="stat">
+          <span>⌘</span>
+          <strong>04+</strong>
+          <span>TECHNOLOGIES USED</span>
+        </div>
+
+        <div className="stat">
+          <span>∞</span>
+          <strong>∞</strong>
+          <span>ALWAYS LEARNING</span>
+        </div>
+
+      </section>
+
+      {/* FEATURED WORK */}
+      <section className="section" id="work">
+
+        <div className="section-top">
+          <h2 className="section-heading">FEATURED WORK</h2>
+          <a href="#work" className="small-link">
+            SELECTED PROJECTS ↗
+          </a>
+        </div>
+
+        <div className="projects-grid">
+
+          {projects.map((project) => (
+            <article className="project-card" key={project.number}>
+
+              <div className={`project-preview ${project.type}`}>
+
+                {project.type === "finance" && (
+                  <div className="dashboard">
+                    <span>VELTYPE / TYPING TEST</span>
+                    <strong>WPM TEST</strong>
+                    <span>Improve your typing speed</span>
+                    <div className="chart-bars">
+                      {[35, 55, 45, 75, 60, 90, 80].map((height, i) => (
+                        <i key={i} style={{ height: `${height}%` }} />
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {project.type === "brand" && (
+                  <div className="brand-preview">
+                    <span>BIZVERO / DIGITAL STOREFRONT</span>
+                    <strong>GROW YOUR<br />BUSINESS.</strong>
+                    <div className="abstract-shape"></div>
+                  </div>
+                )}
+
+                {project.type === "mobile" && (
+                  <div className="phone-preview">
+                    <span>RS / NEXT PROJECT</span>
+                    <strong>NEW<br />IDEAS.</strong>
+                    <div className="phone-circle"></div>
+                    <span>COMING SOON</span>
+                  </div>
+                )}
+
+              </div>
+
+              <div className="project-info">
+                <div>
+                  <span className="project-number">
+                    PROJECT {project.number}
+                  </span>
+
+                  <h3>{project.name}</h3>
+
+                  <p>{project.subtitle}</p>
+
+                  <span className="project-tags">
+                    {project.tags}
+                  </span>
+                </div>
+
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="round-arrow"
+                  aria-label={`View ${project.name}`}
+                >
+                  ↗
+                </a>
+              </div>
+
+            </article>
+          ))}
+
+        </div>
+      </section>
+
+      {/* CAPABILITIES AND TECHNOLOGIES */}
+      <section className="skills-layout" id="capabilities">
+
+        <div className="capabilities">
+          <h2 className="section-heading">CORE CAPABILITIES</h2>
+
+          <div className="capability-grid">
+
+            {capabilities.map((item) => (
+              <div className="capability" key={item.title}>
+                <span style={{ fontSize: "28px", minWidth: "30px" }}>
+                  {item.icon}
+                </span>
+
+                <div>
+                  <h3>{item.title}</h3>
+                  <p>{item.description}</p>
+                </div>
+              </div>
+            ))}
+
+          </div>
+        </div>
+
+        <div className="right-skills">
+
+          <div>
+            <h2 className="section-heading">TOOLS & TECHNOLOGIES</h2>
+
+            <div className="technology-panel">
+
+              {technologies.map(([icon, name]) => (
+                <div className="technology" key={name}>
+                  <span>{icon}</span>
+                  <p>{name}</p>
+                </div>
+              ))}
+
+            </div>
+          </div>
+
+          <div>
+            <h2 className="section-heading">
+              LEARNING & DEVELOPMENT
+            </h2>
+
+            <div className="education-panel">
+              <div>
+                <span className="education-icon">01</span>
+                <p>
+                  <strong>Practical Project Development</strong>
+                  <br />
+                  Building and deploying real-world web applications
+                </p>
+              </div>
+
+              <div>
+                <span className="education-icon">02</span>
+                <p>
+                  <strong>Continuous Learning</strong>
+                  <br />
+                  Exploring modern web technologies and development
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      {/* DEVELOPMENT PROCESS */}
+      <section className="process-section">
+
+        <h2 className="section-heading">MY DEVELOPMENT PROCESS</h2>
+
+        <div className="process-panel">
+
+          {process.map((step) => (
+            <div className="process-step" key={step.number}>
+              <span>
+                {step.number} &nbsp; {step.title}
+              </span>
+
+              <p>{step.description}</p>
+
+              <span style={{ fontSize: "25px" }}>
+                {step.icon}
+              </span>
+            </div>
+          ))}
+
+        </div>
+      </section>
+
+      {/* CONTACT */}
+      <section className="contact-panel" id="contact">
+
+        <div className="contact-title">
+          LET'S BUILD<br />
+          SOMETHING<br />
+          EXTRAORDINARY
+        </div>
+
+        <div className="contact-middle">
+          <p>
+            I'm always interested in learning,
+            building new projects and connecting
+            with people who have great ideas.
+          </p>
+
+          <a href="mailto:your-email@example.com" className="light-button">
+            LET'S WORK TOGETHER ↗
+          </a>
+        </div>
+
+        <div className="contact-details">
+          <p>✉ &nbsp; your-email@example.com</p>
+          <p>⌘ &nbsp; Web Developer</p>
+          <p>◎ &nbsp; Available for opportunities</p>
+          <p>↗ &nbsp; Remote / Worldwide</p>
+        </div>
+
+      </section>
+
+      {/* FOOTER */}
+      <footer className="footer">
+
+        <span>© 2026 RS. ALL RIGHTS RESERVED.</span>
+
+        <div>
+          <a href="#contact">LET'S CONNECT</a>
+          <a href="https://github.com/" target="_blank" rel="noreferrer">
+            GITHUB
+          </a>
+          <a href="#top">BACK TO TOP ↑</a>
+        </div>
+
+      </footer>
+
+    </main>
+  );
+}
