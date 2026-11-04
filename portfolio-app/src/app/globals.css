@@ -95,6 +95,16 @@ a {
   border-bottom: 1px solid transparent;
 }
 
+.hero {
+  background:
+    radial-gradient(
+      ellipse at 75% 15%,
+      rgba(76, 87, 108, 0.22) 0%,
+      rgba(35, 40, 50, 0.12) 35%,
+      transparent 70%
+    );
+}
+
 .hero-copy {
   width: 65%;
   position: relative;
